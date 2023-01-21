@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?attr/colorPrimary"
+        app:elevation="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:liftOnScroll="false">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIconTint="@color/white"
+            app:subtitleTextColor="@color/white"
+            app:titleTextColor="@color/white"
+            tools:subtitle="User 1"
+            tools:title="Activity" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomMenu"
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/topBanner"
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/Widget.Material3.Button.Icon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="0dp"
+                app:icon="@drawable/baseline_sync_24"
+                app:iconSize="32dp"
+                app:iconTint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/profilePicture"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                android:src="@drawable/round_account_circle_24"
+                android:tint="@android:color/darker_gray"
+                app:layout_constraintBottom_toBottomOf="@id/topBanner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/topBanner"
+                app:shapeAppearanceOverlay="@style/circle" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/name"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Mitha Khairulnisa"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profilePicture" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/role"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Role : {...}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/nik"
+                style="@style/TextAppearance.Material3.BodyLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="NIK : MD00001"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/role" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nik">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/titleKunjungan"
+                        style="@style/TextAppearance.Material3.LabelLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kunjungan pada bulan Agustus 2020"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/statistic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/titleKunjungan">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/outline_error_24"
+                                android:tint="@color/error" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/TextAppearance.Material3.LabelLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="150"
+                                android:textSize="22sp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/baseline_check_circle_24"
+                                android:tint="@color/success" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/TextAppearance.Material3.LabelLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="150"
+                                android:textSize="22sp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/round_data_thresholding_24"
+                                android:tint="@color/yellow" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                style="@style/TextAppearance.Material3.LabelLarge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="50%"
+                                android:textSize="22sp" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintTop_toBottomOf="@id/statistic">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/total_store" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/actual_store" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/TextAppearance.Material3.BodyMedium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/percentage" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottomMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                style="@style/TextAppearance.Material3.LabelLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/menu"
+                android:textColor="@color/orange"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/kunjungan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@color/background_icon"
+                        android:src="@drawable/baseline_store_24"
+                        android:tint="@color/orange"
+                        app:contentPadding="4dp"
+                        app:shapeAppearanceOverlay="@style/circle"
+                        app:strokeColor="@color/background_icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Kunjungan"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@color/background_icon"
+                        android:src="@drawable/baseline_install_desktop_24"
+                        android:tint="@color/error"
+                        app:contentPadding="8dp"
+                        app:shapeAppearanceOverlay="@style/circle"
+                        app:strokeColor="@color/background_icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Target install CDFDPC"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@color/background_icon"
+                        android:src="@drawable/outline_desktop_windows_24"
+                        android:tint="@color/primary"
+                        app:contentPadding="8dp"
+                        app:shapeAppearanceOverlay="@style/circle"
+                        app:strokeColor="@color/background_icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Dashboard"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@color/background_icon"
+                        android:src="@drawable/baseline_event_note_24"
+                        android:tint="@color/green"
+                        app:contentPadding="8dp"
+                        app:shapeAppearanceOverlay="@style/circle"
+                        app:strokeColor="@color/background_icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Transmission history"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/logout"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@color/background_icon"
+                        android:src="@drawable/baseline_logout_24"
+                        android:tint="@color/orange_darker"
+                        app:contentPadding="8dp"
+                        app:shapeAppearanceOverlay="@style/circle"
+                        app:strokeColor="@color/background_icon" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        style="@style/TextAppearance.Material3.BodyMedium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Logout"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="13sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
