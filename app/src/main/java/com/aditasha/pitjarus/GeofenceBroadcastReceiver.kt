@@ -33,7 +33,7 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
                     Geofence.GEOFENCE_TRANSITION_EXIT -> {
                         val transitionIntent = Intent(StoreVisitActivity.ACTION_GEOFENCE_TRANSITION)
                         val bundle =
-                            bundleOf(StoreVisitActivity.TRANSITION to Geofence.GEOFENCE_TRANSITION_ENTER)
+                            bundleOf(StoreVisitActivity.TRANSITION to Geofence.GEOFENCE_TRANSITION_EXIT)
                         transitionIntent.putExtras(bundle)
                         context.sendBroadcast(transitionIntent)
                     }
