@@ -23,8 +23,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "MAPS_API_KEY", "\"" + localProperties['maps_api_key'] + "\"")
-        buildConfigField("String", "BASE_URL", "\"" + localProperties['base_url'] + "\"")
+//        buildConfigField("String", "MAPS_API_KEY", "\"" + localProperties['maps_api_key'] + "\"")
+//        buildConfigField("String", "BASE_URL", "\"" + localProperties['base_url'] + "\"")
+
+        buildConfigField("String", "MAPS_API_KEY", "\"AIzaSyDayJ5Cg4HxvJBAihkoBItLrY3tW9937F8\"")
+        buildConfigField("String", "BASE_URL", "\"https://dev.pitjarus.co/api/sariroti_md/index.php/login/loginTest/\"")
     }
 
     buildTypes {
